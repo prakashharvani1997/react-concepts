@@ -1,8 +1,10 @@
+import Card from "../Card/Card";
 import classes from "./MeetupItem.module.css";
 
 function MeetupItem({meetup:{ image, title, description, address }}) {
   return (
     <li className={classes.item}>
+        <Card> 
       <div className={classes.image}>
         <img src={image} alt={title} />
       </div>
@@ -20,6 +22,7 @@ function MeetupItem({meetup:{ image, title, description, address }}) {
       <div className={classes.actions}>
         <button>To Favorites</button>
       </div>
+      </Card>
     </li>
   );
 }
