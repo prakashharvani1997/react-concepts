@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 import MeetupItem from "./MeetupItem";
 import classes from "./NewMeetupForm.module.css";
 
-function NewMeetupForm({ meetups }) {
+function NewMeetupForm({ onAddMeetup }) {
 
    const titleRef = useRef()
    const imageRef = useRef()
@@ -24,6 +24,7 @@ function NewMeetupForm({ meetups }) {
             title,image,address,description
         }
         
+        onAddMeetup(meetupData)
     }
 
     return <Card  >
