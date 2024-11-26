@@ -1,8 +1,12 @@
 import NewMeetupForm from "../components/meetups/NewMeetupForm"
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function NewMeetupPage() {
-    let history = useHistory();
+    //deprecated
+    // let history = useHistory();
+
+    // new one
+    const navigate = useNavigate();
 
     
 
@@ -16,10 +20,10 @@ function NewMeetupPage() {
             }
         }).then((data)=>{
             // Will not allow user to go back from that page
-            history.replace('/')
+            navigate('/',{replace:true})
 
             // Will allow user to go back from that page
-            // history.push('/')
+            navigate('/')
 
         })
     }

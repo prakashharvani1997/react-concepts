@@ -43,10 +43,8 @@ function AllMeetupsPage() {
           }
           meetupss.push(meetup)
         }
-        
-        
-        
-        setLoadings(false);
+
+  setLoadings(false);
         setMeetups(meetupss);
       });
   }, []);
