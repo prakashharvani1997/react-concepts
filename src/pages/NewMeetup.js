@@ -1,7 +1,10 @@
 import NewMeetupForm from "../components/meetups/NewMeetupForm"
+import { useHistory } from "react-router-dom";
 
 function NewMeetupPage() {
+    let history = useHistory();
 
+    
 
     function addMeetupHandler(meetupData) {
         
@@ -11,6 +14,13 @@ function NewMeetupPage() {
             headers:{
                 'Content-type':'application/json'
             }
+        }).then((data)=>{
+            // Will not allow user to go back from that page
+            history.replace('/')
+
+            // Will allow user to go back from that page
+            // history.push('/')
+
         })
     }
 
